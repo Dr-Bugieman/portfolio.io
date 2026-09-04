@@ -40,6 +40,7 @@ export const PORTFOLIO_DATA = {
     phone: "+52 33 1569 8466",
     github: "https://github.com/Dr-Bugieman",
     linkedin: "https://www.linkedin.com/in/noelalejandro-esmeralda-juarez1031/",
+    twitter: "Inexistente",
     location: "Jalisco, México",
     status: " OPEN TO WEB DEVELOPMENT OPPORTUNITIES",
     CLI_EMOJI: "💻",
