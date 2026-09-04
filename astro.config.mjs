@@ -10,7 +10,7 @@ const isGitHubPages = Boolean(process.env.GITHUB_ACTIONS) && !isNetlify;
 // https://astro.build/config
 export default defineConfig({
   site: isNetlify
-    ? (process.env.URL || "https://astro-tui-portfolio.netlify.app")
+    ? (process.env.URL || "https://portfolio.netlify.app")
     : "https://portfolio.github.io",
   base: isGitHubPages ? "/astro-tui-portfolio/" : "/",
   devToolbar: {
