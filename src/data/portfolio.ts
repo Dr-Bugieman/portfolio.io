@@ -16,7 +16,7 @@ export interface CollabItem {
 export interface SkillCategory {
   category: string;
   icon: string;
-  skills: { name: string; level: number; experience: string; tag: string }[];
+  skills: { name: string; level: number }[];
 }
 
 export type Max8Colors =
@@ -69,11 +69,6 @@ export const PORTFOLIO_DATA = {
 |  \| | | | |  _| | |
 | |\  | |_| | |___| |___
 |_| \_|\___/|_____|_____|
- _____ ____  __  __ _____ ____      _    _        _    ____    _
-| ____/ ___||  \/  | ____|  _ \    / \  | |      / \  |  _ \  / \
-|  _| \___ \| |\/| |  _| | |_) |  / _ \ | |     / _ \ | | | |/ _ \
-| |___ ___) | |  | | |___|  _ <  / ___ \| |___ / ___ \| |_| / ___ \
-|_____|____/|_|  |_|_____|_| \_\/_/   \_\|_____/_/   \_\____/_/   \_\
 `,
     specs: {
       OS: "Web / Multiplataforma",
@@ -102,49 +97,37 @@ export const PORTFOLIO_DATA = {
         {
           name: "TypeScript / JavaScript",
           level: 65,
-          experience: "7 yrs",
-          tag: "EXPERT",
         },
-        { name: "Rust", level: 55, experience: "4 yrs" },
+        { name: "Rust", level: 55 },
         {
           name: "Go (Golang)",
-          level: 70,
-          experience: "3 yrs",
-          tag: "ADVANCED",
+          level: 10,
         },
         {
           name: "HTML5 / CSS3 / Tailwind",
-          level: 75,
-          experience: "7 yrs",
-          tag: "EXPERT",
+          level: 65,
         },
-        { name: "Python", level: 88, experience: "5 yrs", tag: "PRO" },
-        { name: "SQL & NoSQL", level: 90, experience: "6 yrs", tag: "PRO" },
+        { name: "Python", level: 50 },
+        { name: "SQL & NoSQL", level: 90 },
       ],
     },
     {
       category: "Frameworks & Frontend",
       icon: "🌐",
       skills: [
-        { name: "React / Next.js", level: 92, experience: "6 yrs", tag: "PRO" },
+        { name: "React / Next.js", level: 40 },
         {
           name: "Tailwind CSS v4",
-          level: 95,
-          experience: "4 yrs",
-          tag: "EXPERT",
+          level: 60,
         },
         {
           name: "Node.js / Hono / Express",
-          level: 70,
-          experience: "6 yrs",
-          tag: "PRO",
+          level: 40,
         },
-        { name: "Vue / Nuxt", level: 80, experience: "3 yrs", tag: "ADVANCED" },
+        { name: "Vue / Nuxt", level: 40 },
         {
           name: "WebAssembly (Wasm)",
-          level: 75,
-          experience: "2 yrs",
-          tag: "INTERMEDIATE",
+          level: 40,
         },
       ],
     },
@@ -154,125 +137,59 @@ export const PORTFOLIO_DATA = {
       skills: [
         {
           name: "Docker / Containerization",
-          level: 88,
-          experience: "5 yrs",
-          tag: "PRO",
+          level: 30,
         },
         {
           name: "Kubernetes & Helm",
-          level: 80,
-          experience: "3 yrs",
-          tag: "ADVANCED",
+          level: 30,
         },
         {
           name: "Linux Administration & Bash",
-          level: 92,
-          experience: "6 yrs",
-          tag: "PRO",
+          level: 45,
         },
         {
           name: "PostgreSQL & Redis",
-          level: 90,
-          experience: "5 yrs",
-          tag: "PRO",
+          level: 40,
         },
         {
           name: "CI/CD GitHub Actions",
-          level: 88,
-          experience: "5 yrs",
-          tag: "PRO",
+          level: 50,
         },
         {
           name: "Cloudflare Edge Workers",
-          level: 85,
-          experience: "4 yrs",
-          tag: "ADVANCED",
+          level: 35,
         },
-      ],
-    },
-    {
-      category: "Web3 & Blockchain",
-      icon: "🔗",
-      skills: [
-        { name: "Solidity", level: 75, experience: "2 yrs", tag: "INTERMEDIATE" },
-        { name: "EVM", level: 80, experience: "3 yrs" },
-        { name: "Hardhat", level: 85, experience: "4 yrs", tag: "PRO" },
-        { name: "Truffle", level: 80, experience: "3 yrs", tag: "ADVANCED" },
-        { name: "Ethers.js", level: 90, experience: "5 yrs", tag: "PRO" },
-        { name: "Web3.js", level: 85, experience: "4 yrs" },
       ],
     },
   ] as SkillCategory[],
 
   collabs: [
     {
-      id: "collab-hyper-edge",
-      partner: "HyperEdge Foundation",
-      partnerType: "Open Source Orgniversidad",
-      title: "Distributed Edge Cache Protocol (v2.0)",
-      role: "Lead Protocol Architect & Contributor",
-      period: "2024 - PRESENT",
-      status: "ACTIVE",
-      description:
-        "Co-designed an open-source, ultra-low latency distributed edge cache protocol for multi-region serverless runtimes.",
-      contributions: [
-        "Architected lock-free data structures in Rust, reducing memory footprint by 35%.",
-        "Co-authored RFC specs for async peer-to-peer buffer sync over QUIC.",
-        "Mentored 12+ open-source contributors on core module development.",
-      ],
-      techStack: ["Rust", "Tokio", "QUIC Protocol", "WebAssembly"],
-      link: "https://github.com",
-      asciiLogo: `+--------------------+
-| HYPEREDGE PROTOCOL |
-| [STATUS: ACTIVE]   |
-+--------------------+`,
-    },
-    {
-      id: "collab-astrosynth",
-      partner: "Aetheria Audio Labs",
-      partnerType: "Tech Studio",
-      title: "Browser WebAudio DSP Sequencer",
-      role: "Senior Frontend Engineer & Audio Specialist",
-      period: "2023 - 2024",
+      id: "experience-unisite",
+      partner: "UNISITE",
+      partnerType: "Startup",
+      title: "Desarrollo de plataforma web",
+      role: "Desarrollador Web (Practicante)",
+      period: "Guadalajara, Jalisco | Marzo 2025 - Agosto 2025 (400 horas)",
       status: "COMPLETED",
       description:
-        "Joint collaboration to create a browser-based polyphonic synthesizer engine powered by Astro.js and WebAudio Worklets.",
+        "Colaboración en el desarrollo frontend y backend de una plataforma web completa utilizando el patrón MVC.",
       contributions: [
-        "Implemented real-time audio wave visualization using HTML5 Canvas & WebGL shaders.",
-        "Optimized audio buffer rendering latency down to sub-5ms across Chrome & Safari.",
-        "Built responsive TUI modular controls using Tailwind CSS.",
+        "Desarrollo backend con PHP y frontend con HTML, CSS, Bootstrap y JavaScript.",
+        "Diseño e implementación de una base de datos relacional en MySQL.",
+        "Pruebas y validación de funcionalidades antes de la liberación del sistema.",
+        "Análisis y documentación de un CRM web heredado, evaluando su viabilidad para mantenimiento o rediseño.",
+        "Planeación, seguimiento y ejecución del proyecto bajo metodología ágil.",
+        "Elaboración continua de documentación técnica durante el desarrollo.",
+        "Presentación de resultados técnicos y propuestas de mejora al director de la empresa.",
+        "Despliegue del sistema en el servidor de la empresa y publicación final de la plataforma.",
       ],
-      techStack: [
-        "Astro.js",
-        "TypeScript",
-        "WebAudio API",
-        "Tailwind CSS",
-        "Canvas",
-      ],
-      link: "https://github.com",
-      asciiLogo: `/\\_/\\   AETHERIA
-( o.o ) [AUDIO LABS]
- > ^ <  ♪ ♫ ♩ ♬`,
-    },
-    {
-      id: "collab-neural-cli",
-      partner: "KernelAI Research Collective",
-      partnerType: "Research Team",
-      title: "Context-Aware Terminal AI Co-Pilot",
-      role: "Core Systems Collaborator",
-      period: "2023 - PRESENT",
-      status: "ONGOING",
-      description:
-        "Partnered with AI researchers to build a lightweight, privacy-focused CLI co-pilot that translates intent to verified shell commands.",
-      contributions: [
-        "Designed local LLM token streaming pipeline via IPC socket sockets.",
-        "Engineered strict command validation sandboxing for dangerous shell commands.",
-      ],
-      techStack: ["Node.js", "TypeScript", "Ollama API", "Inquirer.js"],
-      link: "https://github.com",
-      asciiLogo: `[KERNEL-AI COLLAB]
-Intent    --> [Local LLM]
-Execution --> bash -c`,
+      techStack: ["PHP", "HTML", "CSS", "Bootstrap", "JavaScript", "MySQL", "MVC"],
+      link: "https://github.com/Dr-Bugieman/TestVocacionalUnisitePublic.git",
+      asciiLogo: `+--------------------+
+|      UNISITE       |
+| [WEB DEVELOPMENT]  |
++--------------------+`,
     },
   ] as CollabItem[],
 

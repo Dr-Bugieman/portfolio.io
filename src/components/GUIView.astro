@@ -105,10 +105,6 @@ const { developer, skills, collabs } = PORTFOLIO_DATA;
           <span>Skill Domains:</span>
           <span class="font-bold text-yellow-400">{skills.length}</span>
         </div>
-        <div class="flex justify-between text-[var(--fg-main)]">
-          <span>Experience:</span>
-          <span class="font-bold text-emerald-400">7+ Years</span>
-        </div>
       </div>
 
       <!-- Quick GitHub Link -->
@@ -235,9 +231,6 @@ const { developer, skills, collabs } = PORTFOLIO_DATA;
                           <span class="text-[var(--fg-bright)]">
                             {skill.name}
                           </span>
-                          <span class="text-[var(--fg-dim)] text-[10px]">
-                            {skill.experience}
-                          </span>
                         </div>
                         <div class="flex items-center gap-2 text-xs">
                           <div class="flex-1 bg-[var(--bg-card)] border border-[var(--border-color)] h-4 overflow-hidden relative flex items-center px-1">
@@ -249,9 +242,6 @@ const { developer, skills, collabs } = PORTFOLIO_DATA;
                               {barStr} {level}%
                             </span>
                           </div>
-                          <span class="text-[9px] px-1 bg-[var(--border-color)] text-[var(--accent)] font-bold">
-                            {skill.tag}
-                          </span>
                         </div>
                       </div>
                     );
