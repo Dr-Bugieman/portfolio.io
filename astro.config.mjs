@@ -11,7 +11,7 @@ const isGitHubPages = Boolean(process.env.GITHUB_ACTIONS) && !isNetlify;
 export default defineConfig({
   site: isNetlify
     ? (process.env.URL || "https://astro-tui-portfolio.netlify.app")
-    : "https://nivinvysakh.github.io",
+    : "https://portfolio.github.io",
   base: isGitHubPages ? "/astro-tui-portfolio/" : "/",
   devToolbar: {
     enabled: false,
