@@ -101,7 +101,7 @@ export const PORTFOLIO_DATA = {
       skills: [
         {
           name: "TypeScript / JavaScript",
-          level: 695,
+          level: 65,
           experience: "7 yrs",
           tag: "EXPERT",
         },
@@ -114,7 +114,7 @@ export const PORTFOLIO_DATA = {
         },
         {
           name: "HTML5 / CSS3 / Tailwind",
-          level: 795,
+          level: 75,
           experience: "7 yrs",
           tag: "EXPERT",
         },
@@ -126,7 +126,6 @@ export const PORTFOLIO_DATA = {
       category: "Frameworks & Frontend",
       icon: "🌐",
       skills: [
-        { name: "Astro.js", level: 950, experience: "3 yrs", tag: "EXPERT" },
         { name: "React / Next.js", level: 92, experience: "6 yrs", tag: "PRO" },
         {
           name: "Tailwind CSS v4",
@@ -136,7 +135,7 @@ export const PORTFOLIO_DATA = {
         },
         {
           name: "Node.js / Hono / Express",
-          level: 790,
+          level: 70,
           experience: "6 yrs",
           tag: "PRO",
         },
