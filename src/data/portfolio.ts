@@ -32,17 +32,17 @@ export type Max8Colors =
 
 export const PORTFOLIO_DATA = {
   developer: {
-    name: "Alex Devson",
-    handle: "alexdevson",
-    title: "Senior Full Stack & Systems Engineer",
-    alias: "root@quantum-box",
-    email: "alexdevson@dev.com",
-    github: "https://github.com/nivinvysakh/astro-tui-portfolio",
-    linkedin: "https://linkedin.com",
-    twitter: "https://x.com",
-    location: "San Francisco, CA // UTC-7",
-    status: " OPEN FOR COLLABORATIONS & CONTRACTS",
-    CLI_EMOJI: "🫐",
+    name: "Noel Alejandro Esmeralda Juarez",
+    handle: "Dr-Bugieman",
+    title: "Desarrollador Web Junior",
+    alias: "Dr-Bugieman@portfolio",
+    email: "noel.esmeraldaj@gmail.com",
+    phone: "+52 33 1569 8466",
+    github: "https://github.com/Dr-Bugieman",
+    linkedin: "https://www.linkedin.com/in/noelalejandro-esmeralda-juarez1031/",
+    location: "Jalisco, México",
+    status: " OPEN TO WEB DEVELOPMENT OPPORTUNITIES",
+    CLI_EMOJI: "💻",
     palette: [
       "#0f0f0f",
       "#ef4444",
@@ -53,55 +53,67 @@ export const PORTFOLIO_DATA = {
       "#06b6d4",
       "#f8fafc",
     ],
-    bio: "Passionate systems & web engineer with 7+ years of experience building high-throughput edge systems, interactive web applications, and developer tools. Active open-source contributor and collaborative team player.",
+    bio: "Ingeniero en Software recién egresado con experiencia práctica en desarrollo web frontend y backend, adquirida durante un proyecto real de 400 horas bajo metodología ágil. Proactivo, con capacidad de aprendizaje rápido y motivación constante por investigar y adoptar nuevas herramientas y tecnologías.",
     quote:
-      '"Code is like humor. When you have to explain it, it’s bad." – Cory House',
+      '"El aprendizaje constante es la base del crecimiento profesional."',
+    education: "Ingeniería de Software — Universidad Enrique Díaz de León (2021 - 2025) | Promedio: 93.4",
+    certifications: [
+      "Fundamentos de QA y Pruebas de Software (Quality Assurance)",
+      "Programación con Agentes de Inteligencia Artificial",
+    ],
+    languages: "Español, Inglés",
     asciiBanner: `
-    _    _     _______  __
-   / \\  | |   | ____\\ \\/ /
-  / _ \\ | |   |  _|  \\  / 
- / ___ \\| |___| |___ /  \\ 
-/_/   \\_\\_____|_____/_/\\_\\
-  ____  _______   ______   ___  _   _ 
- |  _ \\| ____\\ \\ / / ___| / _ \\| \\ | |
- | | | |  _|  \\ V /\\___ \\| | | |  \\| |
- | |_| | |___  | |  ___) | |_| | |\\  |
- |____/|_____| |_| |____/ \\___/|_| \\_|
+ _   _  ___  _____ _
+| \ | |/ _ \| ____| |
+|  \| | | | |  _| | |
+| |\  | |_| | |___| |___
+|_| \_|\___/|_____|_____|
+ _____ ____  __  __ _____ ____      _    _        _    ____    _
+| ____/ ___||  \/  | ____|  _ \    / \  | |      / \  |  _ \  / \
+|  _| \___ \| |\/| |  _| | |_) |  / _ \ | |     / _ \ | | | |/ _ \
+| |___ ___) | |  | | |___|  _ <  / ___ \| |___ / ___ \| |_| / ___ \
+|_____|____/|_|  |_|_____|_| \_\/_/   \_\|_____/_/   \_\____/_/   \_\
 `,
     specs: {
-      OS: "Arch Linux x86_64 / macOS Darwin",
-      Kernel: "6.10.8-zen1-1-zen",
-      Uptime: "42 days, 13 hours, 37 mins",
-      Shell: "zsh 5.9 (x86_64-apple-darwin22.0)",
-      Terminal: "Alacritty / Web-TUI Astro",
-      WM: "i3-gaps / yabai",
-      Editor: "Neovim (NVChad) / VS Code",
-      CPU: "Apple M3 Max (16 cores)",
-      Memory: "24.5GiB / 64.0GiB",
+      OS: "Web / Multiplataforma",
+      Kernel: "Software Engineering",
+      Uptime: "Recién egresado",
+      Shell: "Frontend & Backend",
+      WM: "Metodología ágil",
+      Editor: "Documentación técnica",
+      CPU: "PHP / JavaScript / Java",
+      Memory: "MySQL / Bases relacionales",
+      Role: "Desarrollador Web Junior",
+      Education: "Ingeniería de Software",
+      University: "Universidad Enrique Díaz de León",
+      Location: "Guadalajara, Jalisco",
+      Phone: "+52 33 1569 8466",
+      Languages: "Español / Inglés",
+      Availability: "Open to opportunities",
     },
   },
 
   skills: [
     {
-      category: "Core Languages",
+      category: "Desarrollo Web",
       icon: "⚡",
       skills: [
         {
           name: "TypeScript / JavaScript",
-          level: 95,
+          level: 695,
           experience: "7 yrs",
           tag: "EXPERT",
         },
-        { name: "Rust", level: 85, experience: "4 yrs", tag: "ADVANCED" },
+        { name: "Rust", level: 55, experience: "4 yrs" },
         {
           name: "Go (Golang)",
-          level: 80,
+          level: 70,
           experience: "3 yrs",
           tag: "ADVANCED",
         },
         {
           name: "HTML5 / CSS3 / Tailwind",
-          level: 95,
+          level: 795,
           experience: "7 yrs",
           tag: "EXPERT",
         },
@@ -113,7 +125,7 @@ export const PORTFOLIO_DATA = {
       category: "Frameworks & Frontend",
       icon: "🌐",
       skills: [
-        { name: "Astro.js", level: 95, experience: "3 yrs", tag: "EXPERT" },
+        { name: "Astro.js", level: 950, experience: "3 yrs", tag: "EXPERT" },
         { name: "React / Next.js", level: 92, experience: "6 yrs", tag: "PRO" },
         {
           name: "Tailwind CSS v4",
@@ -123,7 +135,7 @@ export const PORTFOLIO_DATA = {
         },
         {
           name: "Node.js / Hono / Express",
-          level: 90,
+          level: 790,
           experience: "6 yrs",
           tag: "PRO",
         },
@@ -183,11 +195,11 @@ export const PORTFOLIO_DATA = {
       icon: "🔗",
       skills: [
         { name: "Solidity", level: 75, experience: "2 yrs", tag: "INTERMEDIATE" },
-        { name: "EVM", level: 80, experience: "3 yrs", tag: "ADVANCED" },
+        { name: "EVM", level: 80, experience: "3 yrs" },
         { name: "Hardhat", level: 85, experience: "4 yrs", tag: "PRO" },
         { name: "Truffle", level: 80, experience: "3 yrs", tag: "ADVANCED" },
         { name: "Ethers.js", level: 90, experience: "5 yrs", tag: "PRO" },
-        { name: "Web3.js", level: 85, experience: "4 yrs", tag: "PRO" },
+        { name: "Web3.js", level: 85, experience: "4 yrs" },
       ],
     },
   ] as SkillCategory[],
@@ -196,7 +208,7 @@ export const PORTFOLIO_DATA = {
     {
       id: "collab-hyper-edge",
       partner: "HyperEdge Foundation",
-      partnerType: "Open Source Org",
+      partnerType: "Open Source Orgniversidad",
       title: "Distributed Edge Cache Protocol (v2.0)",
       role: "Lead Protocol Architect & Contributor",
       period: "2024 - PRESENT",

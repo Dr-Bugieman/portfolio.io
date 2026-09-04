@@ -176,6 +176,25 @@ const { developer, skills, collabs } = PORTFOLIO_DATA;
             </div>
           </div>
         </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+          <div class="p-3 border border-[var(--border-color)] bg-[var(--bg-main)] space-y-1">
+            <span class="text-[10px] text-[var(--fg-dim)] uppercase font-bold">EDUCATION</span>
+            <div class="text-xs text-[var(--fg-bright)]">{developer.education}</div>
+          </div>
+          <div class="p-3 border border-[var(--border-color)] bg-[var(--bg-main)] space-y-1">
+            <span class="text-[10px] text-[var(--fg-dim)] uppercase font-bold">CONTACT</span>
+            <div class="text-xs text-[var(--fg-bright)]">{developer.phone}</div>
+            <div class="text-xs text-[var(--fg-dim)]">{developer.languages}</div>
+          </div>
+        </div>
+
+        <div class="p-3 border border-[var(--border-color)] bg-[var(--bg-main)] space-y-2">
+          <span class="text-[10px] text-[var(--fg-dim)] uppercase font-bold">COURSES & CERTIFICATIONS</span>
+          <ul class="list-disc list-inside text-xs text-[var(--fg-main)] space-y-1">
+            {developer.certifications.map((certification) => <li>{certification}</li>)}
+          </ul>
+        </div>
       </section>
 
       <!-- Section 2: Skills -->
