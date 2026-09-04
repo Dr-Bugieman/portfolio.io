@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import TerminalWindow from "../components/TerminalWindow.astro";
 import MobileNotice from "../components/MobileNotice.astro";
 import { PORTFOLIO_DATA } from "../data/portfolio";
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <Layout
@@ -76,7 +77,7 @@ import { PORTFOLIO_DATA } from "../data/portfolio";
       <!-- Interactive 404 Quick Actions -->
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
         <a
-          href="/"
+          href={baseUrl}
           id="btn-return-home"
           class="flex items-center justify-center gap-2 p-3 bg-[var(--border-color)] hover:bg-[var(--border-active)] border border-[var(--accent)] text-[var(--fg-bright)] font-bold transition-all group cursor-pointer text-center"
         >

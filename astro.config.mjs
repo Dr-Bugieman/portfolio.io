@@ -6,13 +6,20 @@ import process from "node:process";
 // Detect build platform: Netlify vs GitHub Pages vs Local
 const isNetlify = Boolean(process.env.NETLIFY);
 const isGitHubPages = Boolean(process.env.GITHUB_ACTIONS) && !isNetlify;
+const [githubOwner, githubRepository] = (process.env.GITHUB_REPOSITORY || "").split("/");
+const isUserSite = githubRepository?.toLowerCase() === `${githubOwner?.toLowerCase()}.github.io`;
+const githubPagesSite = githubOwner && githubRepository
+  ? `https://${githubOwner}.github.io${isUserSite ? "" : `/${githubRepository}`}`
+  : "https://portfolio.github.io";
 
 // https://astro.build/config
 export default defineConfig({
   site: isNetlify
     ? (process.env.URL || "https://portfolio.netlify.app")
-    : "https://portfolio.github.io",
-  base: isGitHubPages ? "/astro-tui-portfolio/" : "/",
+    : isGitHubPages
+      ? githubPagesSite
+      : "http://localhost:4321",
+  base: isGitHubPages && githubRepository && !isUserSite ? `/${githubRepository}/` : "/",
   devToolbar: {
     enabled: false,
   },
