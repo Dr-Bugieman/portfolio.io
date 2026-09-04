@@ -98,10 +98,9 @@ export const PORTFOLIO_DATA = {
           name: "TypeScript / JavaScript",
           level: 65,
         },
-        { name: "Rust", level: 55 },
         {
-          name: "Go (Golang)",
-          level: 10,
+          name: "PHP",
+          level: 60,
         },
         {
           name: "HTML5 / CSS3 / Tailwind",
@@ -115,19 +114,18 @@ export const PORTFOLIO_DATA = {
       category: "Frameworks & Frontend",
       icon: "🌐",
       skills: [
-        { name: "React / Next.js", level: 40 },
+        { name: "React / Next.js", level: 30 },
         {
           name: "Tailwind CSS v4",
-          level: 60,
+          level: 50,
         },
         {
           name: "Node.js / Hono / Express",
-          level: 40,
+          level: 30,
         },
-        { name: "Vue / Nuxt", level: 40 },
         {
-          name: "WebAssembly (Wasm)",
-          level: 40,
+          name: "Spring Boot / Java",
+          level: 35,
         },
       ],
     },
@@ -140,24 +138,16 @@ export const PORTFOLIO_DATA = {
           level: 30,
         },
         {
-          name: "Kubernetes & Helm",
-          level: 30,
-        },
-        {
           name: "Linux Administration & Bash",
           level: 45,
         },
         {
-          name: "PostgreSQL & Redis",
-          level: 40,
-        },
-        {
           name: "CI/CD GitHub Actions",
-          level: 50,
+          level: 20,
         },
         {
           name: "Cloudflare Edge Workers",
-          level: 35,
+          level: 25,
         },
       ],
     },
