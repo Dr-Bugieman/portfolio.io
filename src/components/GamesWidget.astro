@@ -1,7 +1,11 @@
 ---
 import { GAMES_CONFIG, getLiveGameActivity } from "../config/gamesConfig";
 
-const liveGame = await getLiveGameActivity();
+const hasGamesConfig =
+  GAMES_CONFIG.enabled &&
+  Boolean(GAMES_CONFIG.lanyardUserId) &&
+  GAMES_CONFIG.lanyardUserId !== "your_discord_id";
+const liveGame = hasGamesConfig ? await getLiveGameActivity() : null;
 
 const game = liveGame || {
   isPlaying: false,

@@ -107,7 +107,11 @@ export function parseGameAsset(game: any): string {
  * Helper to fetch live Game activity from Lanyard API
  */
 export async function getLiveGameActivity(): Promise<GameActivity | null> {
-  if (GAMES_CONFIG.lanyardUserId) {
+  if (
+    GAMES_CONFIG.enabled &&
+    GAMES_CONFIG.lanyardUserId &&
+    GAMES_CONFIG.lanyardUserId !== "your_discord_id"
+  ) {
     try {
       const res = await fetch(`https://api.lanyard.rest/v1/users/${GAMES_CONFIG.lanyardUserId}`);
       const data = await res.json();

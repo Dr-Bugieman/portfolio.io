@@ -685,21 +685,39 @@
 
       const genreColor = track.genre === "YouTube" ? "bg-red-950 text-red-400 border border-red-800" : "bg-[var(--border-color)] text-[var(--accent)]";
 
-      row.innerHTML = `
-        <div class="flex items-center gap-2 truncate pr-2">
-          <span class="text-[var(--fg-dim)] text-[10px] w-4 font-mono">${idx + 1}.</span>
-          <span class="radio-row-title text-[var(--fg-bright)] font-bold truncate">${track.title}</span>
-          <span class="text-[var(--fg-dim)] text-[10px]">(${track.artist})</span>
-        </div>
-        <div class="flex items-center gap-2 shrink-0">
-          <span class="text-[9px] px-1 py-0.5 ${genreColor} font-bold">${track.genre}</span>
-          ${
-            track.isCustom
-              ? `<button class="yt-delete-btn text-red-400 hover:text-red-300 font-bold px-1 text-xs" title="Remove track">✕</button>`
-              : `<span class="text-[10px] text-[var(--fg-dim)]">${track.duration || "2:00"}</span>`
-          }
-        </div>
-      `;
+      const trackInfo = document.createElement("div");
+      trackInfo.className = "flex items-center gap-2 truncate pr-2";
+      const trackNumber = document.createElement("span");
+      trackNumber.className = "text-[var(--fg-dim)] text-[10px] w-4 font-mono";
+      trackNumber.textContent = `${idx + 1}.`;
+      const trackTitle = document.createElement("span");
+      trackTitle.className = "radio-row-title text-[var(--fg-bright)] font-bold truncate";
+      trackTitle.textContent = track.title;
+      const trackArtist = document.createElement("span");
+      trackArtist.className = "text-[var(--fg-dim)] text-[10px]";
+      trackArtist.textContent = `(${track.artist})`;
+      trackInfo.append(trackNumber, trackTitle, trackArtist);
+
+      const trackMeta = document.createElement("div");
+      trackMeta.className = "flex items-center gap-2 shrink-0";
+      const genre = document.createElement("span");
+      genre.className = `text-[9px] px-1 py-0.5 ${genreColor} font-bold`;
+      genre.textContent = track.genre;
+      trackMeta.appendChild(genre);
+      if (track.isCustom) {
+        const deleteButton = document.createElement("button");
+        deleteButton.className = "yt-delete-btn text-red-400 hover:text-red-300 font-bold px-1 text-xs";
+        deleteButton.title = "Remove track";
+        deleteButton.type = "button";
+        deleteButton.textContent = "✕";
+        trackMeta.appendChild(deleteButton);
+      } else {
+        const duration = document.createElement("span");
+        duration.className = "text-[10px] text-[var(--fg-dim)]";
+        duration.textContent = track.duration || "2:00";
+        trackMeta.appendChild(duration);
+      }
+      row.append(trackInfo, trackMeta);
 
       row.addEventListener("click", (e) => {
         if ((e.target as HTMLElement).classList.contains("yt-delete-btn")) {

@@ -40,7 +40,7 @@ export const PORTFOLIO_DATA = {
     phone: "+52 33 1569 8466",
     github: "https://github.com/Dr-Bugieman",
     linkedin: "https://www.linkedin.com/in/noelalejandro-esmeralda-juarez1031/",
-    twitter: "Inexistente",
+    twitter: "",
     location: "Jalisco, México",
     status: " OPEN TO WEB DEVELOPMENT OPPORTUNITIES",
     CLI_EMOJI: "💻",
@@ -96,7 +96,7 @@ export const PORTFOLIO_DATA = {
       skills: [
         {
           name: "TypeScript / JavaScript",
-          level: 65,
+          level: 60,
         },
         {
           name: "PHP",
@@ -107,21 +107,21 @@ export const PORTFOLIO_DATA = {
           level: 65,
         },
         { name: "Python", level: 50 },
-        { name: "SQL & NoSQL", level: 90 },
+        { name: "SQL & NoSQL", level: 80 },
       ],
     },
     {
       category: "Frameworks & Frontend",
       icon: "🌐",
       skills: [
-        { name: "React / Next.js", level: 30 },
+        { name: "React / Next.js", level: 20 },
         {
           name: "Tailwind CSS v4",
           level: 50,
         },
         {
           name: "Node.js / Hono / Express",
-          level: 30,
+          level: 20,
         },
         {
           name: "Spring Boot / Java",
@@ -144,10 +144,6 @@ export const PORTFOLIO_DATA = {
         {
           name: "CI/CD GitHub Actions",
           level: 20,
-        },
-        {
-          name: "Cloudflare Edge Workers",
-          level: 25,
         },
       ],
     },

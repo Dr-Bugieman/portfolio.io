@@ -538,7 +538,13 @@ const { developer, skills, collabs } = PORTFOLIO_DATA;
         stats.topLanguages.forEach((lang) => {
           const badge = document.createElement("span");
           badge.className = "px-2 py-1 bg-[var(--bg-card)] border border-[var(--border-color)] text-[var(--fg-bright)] flex items-center gap-1.5";
-          badge.innerHTML = `<span class="text-[var(--accent)] font-bold">${lang.name}</span> <span class="text-[var(--fg-dim)] text-[10px]">(${lang.percentage}%)</span>`;
+          const languageName = document.createElement("span");
+          languageName.className = "text-[var(--accent)] font-bold";
+          languageName.textContent = lang.name;
+          const languagePercentage = document.createElement("span");
+          languagePercentage.className = "text-[var(--fg-dim)] text-[10px]";
+          languagePercentage.textContent = `(${lang.percentage}%)`;
+          badge.append(languageName, " ", languagePercentage);
           langListEl.appendChild(badge);
         });
       }
@@ -551,19 +557,31 @@ const { developer, skills, collabs } = PORTFOLIO_DATA;
           card.target = "_blank";
           card.rel = "noopener noreferrer";
           card.className = "border border-[var(--border-color)] bg-[var(--bg-main)] p-3 hover:border-[var(--accent)] transition-all flex flex-col justify-between block group";
-          card.innerHTML = `
-            <div>
-              <div class="flex items-center justify-between gap-2 border-b border-[var(--border-color)] pb-1.5 mb-1.5">
-                <span class="text-xs font-bold text-[var(--fg-bright)] group-hover:text-[var(--accent)] truncate">📦 ${repo.name}</span>
-                <span class="text-[10px] text-[var(--accent)] font-bold shrink-0">⭐ ${repo.stars}</span>
-              </div>
-              <p class="text-[11px] text-[var(--fg-dim)] line-clamp-2 leading-tight">${repo.description}</p>
-            </div>
-            <div class="flex flex-wrap items-center justify-between text-[10px] text-[var(--fg-dim)] pt-2 mt-2 border-t border-[var(--border-color)] gap-1">
-              <span class="text-emerald-400 font-bold">${repo.language}</span>
-              <span class="truncate">Updated ${repo.updatedAt} ↗</span>
-            </div>
-          `;
+          const repoBody = document.createElement("div");
+          const repoHeader = document.createElement("div");
+          repoHeader.className = "flex items-center justify-between gap-2 border-b border-[var(--border-color)] pb-1.5 mb-1.5";
+          const repoName = document.createElement("span");
+          repoName.className = "text-xs font-bold text-[var(--fg-bright)] group-hover:text-[var(--accent)] truncate";
+          repoName.textContent = `📦 ${repo.name}`;
+          const repoStars = document.createElement("span");
+          repoStars.className = "text-[10px] text-[var(--accent)] font-bold shrink-0";
+          repoStars.textContent = `⭐ ${repo.stars}`;
+          repoHeader.append(repoName, repoStars);
+          const repoDescription = document.createElement("p");
+          repoDescription.className = "text-[11px] text-[var(--fg-dim)] line-clamp-2 leading-tight";
+          repoDescription.textContent = repo.description;
+          repoBody.append(repoHeader, repoDescription);
+
+          const repoFooter = document.createElement("div");
+          repoFooter.className = "flex flex-wrap items-center justify-between text-[10px] text-[var(--fg-dim)] pt-2 mt-2 border-t border-[var(--border-color)] gap-1";
+          const repoLanguage = document.createElement("span");
+          repoLanguage.className = "text-emerald-400 font-bold";
+          repoLanguage.textContent = repo.language;
+          const repoUpdated = document.createElement("span");
+          repoUpdated.className = "truncate";
+          repoUpdated.textContent = `Updated ${repo.updatedAt} ↗`;
+          repoFooter.append(repoLanguage, repoUpdated);
+          card.append(repoBody, repoFooter);
           reposListEl.appendChild(card);
         });
       }

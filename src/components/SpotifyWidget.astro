@@ -1,7 +1,11 @@
 ---
 import { SPOTIFY_CONFIG, getSpotifyActivity } from "../config/spotifyConfig";
 
-const liveTrack = await getSpotifyActivity();
+const hasSpotifyConfig =
+  SPOTIFY_CONFIG.enabled &&
+  Boolean(SPOTIFY_CONFIG.lanyardUserId) &&
+  SPOTIFY_CONFIG.lanyardUserId !== "your_discord_id";
+const liveTrack = hasSpotifyConfig ? await getSpotifyActivity() : null;
 
 const track = liveTrack || {
   isPlaying: false,

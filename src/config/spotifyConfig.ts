@@ -32,7 +32,11 @@ export const SPOTIFY_CONFIG: SpotifyConfig = {
  * Helper to fetch live Spotify activity from Lanyard API
  */
 export async function getSpotifyActivity(): Promise<SpotifyTrack | null> {
-  if (SPOTIFY_CONFIG.lanyardUserId) {
+  if (
+    SPOTIFY_CONFIG.enabled &&
+    SPOTIFY_CONFIG.lanyardUserId &&
+    SPOTIFY_CONFIG.lanyardUserId !== "your_discord_id"
+  ) {
     try {
       const res = await fetch(`https://api.lanyard.rest/v1/users/${SPOTIFY_CONFIG.lanyardUserId}`);
       const data = await res.json();

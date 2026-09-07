@@ -133,6 +133,8 @@ const baseUrl = import.meta.env.BASE_URL;
   import { playBeep, playErrorSound, playSuccessSound, playKeypressSound } from "../utils/sound";
 
   document.addEventListener("DOMContentLoaded", () => {
+    const homeUrl = document.getElementById("btn-return-home")?.getAttribute("href") || "/";
+
     // 1. Play 404 Error Audio Feedback on Load
     setTimeout(() => {
       playErrorSound();
@@ -176,7 +178,7 @@ const baseUrl = import.meta.env.BASE_URL;
       playErrorSound();
       appendConsoleLog("🔄 Rebooting virtual system... Redirecting home.", "text-yellow-400 font-bold");
       setTimeout(() => {
-        window.location.href = "/";
+        window.location.href = homeUrl;
       }, 1000);
     });
 
@@ -203,7 +205,14 @@ const baseUrl = import.meta.env.BASE_URL;
       const rawCmd = consoleInput.value.trim();
       if (!rawCmd) return;
 
-      appendConsoleLog(`&gt; ${rawCmd}`, "text-[var(--fg-bright)] font-bold");
+      const escapedCmd = rawCmd.replace(/[&<>"']/g, (character) => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;",
+      })[character] || character);
+      appendConsoleLog(`&gt; ${escapedCmd}`, "text-[var(--fg-bright)] font-bold");
       consoleInput.value = "";
 
       const cmd = rawCmd.toLowerCase();
@@ -226,7 +235,7 @@ const baseUrl = import.meta.env.BASE_URL;
           playSuccessSound();
           appendConsoleLog("🚀 Redirecting to root filesystem ~/portfolio...", "text-emerald-400 font-bold");
           setTimeout(() => {
-            window.location.href = "/";
+            window.location.href = homeUrl;
           }, 600);
           break;
 
@@ -249,7 +258,7 @@ const baseUrl = import.meta.env.BASE_URL;
           playErrorSound();
           appendConsoleLog("💥 KERNEL RESET TRIGGERED...", "text-red-400 font-bold");
           setTimeout(() => {
-            window.location.href = "/";
+            window.location.href = homeUrl;
           }, 800);
           break;
 
@@ -264,7 +273,7 @@ const baseUrl = import.meta.env.BASE_URL;
         default:
           playErrorSound();
           appendConsoleLog(
-            `bash: command not found: <span class='text-red-400 font-bold'>${rawCmd}</span>. Type '<span class='text-[var(--accent)] font-bold'>home</span>' or '<span class='text-[var(--accent)] font-bold'>help</span>'.`,
+            `bash: command not found: <span class='text-red-400 font-bold'>${escapedCmd}</span>. Type '<span class='text-[var(--accent)] font-bold'>home</span>' or '<span class='text-[var(--accent)] font-bold'>help</span>'.`,
             "text-red-300"
           );
           break;
